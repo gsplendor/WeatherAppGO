@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="src/WeatherAppGO-c.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/35f1740b68.js" crossorigin="anonymous"></script>
+    <title>Weather App Project</title>
+
+</head>
+
+<body>
+    <div class="container">     
+        <div class="weather-app">
+            <br/>
+            
+            <h1> Glad you are here!🌞
+            </h1>
+        </br>
+        <div class="row">
+            <div class="col-4" id="location">
+                <button>
+                    Paris </br>🗺🌍🗺
+                </button>
+            </div>
+
+            <div class="col-4" id="location">
+                <button>
+                    New York </br>🗺🌍🗺
+                </button>
+            </div>
+
+            <div class="col-4" id="location">
+                <button>
+                    Lagos </br>🗺🌍🗺
+                </button>
+            </div>
+            
+            </div>
+            <br/>
+
+            <form class="search-form" id="search-form">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="search" placeholder="Type your city..." autocomplete="off" autofocus="on"
+                            id="city-input" class="form-control shadow-sm" />
+                    </div>
+
+                    <div class="col-4">
+                        <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
+                    </div>
+
+                    <div class="col-2">
+                        <button class="btn btn-primary w-100" id="current-weather-button" type="button">
+                            <i class="fas fa-location-arrow"></i>
+                        </i>
+                    </button>
+                    </div>
+                </div>
+            </form>
+
+            <h2>
+                <i class="fas fa-cloud-sun"></i>
+                <strong id="city">Vancouver</strong>
+                <br />
+                <span class="temperature" id="degree">5</span><span class="units">
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
+                </span>
+            </h2>
+
+            <h3 id="date">Thursday, Mar 18, 2021, 07:09 AM
+            </h3>
+        
+            <hr />
+            <div class="col-6">
+                <ul>
+                    <li>Right Now: <span id="description"></span></li>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+
+                </ul>
+        </div>  
+        
+        <hr />
+        <div class="view">
+            Hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+            <br />
+            
+            <a href="https://github.com" target="_blank">Open-source code</a> by Gladys O.
+            <a href="https://www.linkedin.com" target="_blank">
+            <i class="fab fa-linkedin"></i></a>
+        </div>
+        </div>
+
+    <script src="src/WeatherAppGO-j.js">
+    </script>
+</body>
+
+</html>
