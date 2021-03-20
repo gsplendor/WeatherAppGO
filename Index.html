@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    
     <link href="WeatherAppGO-c.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,21 +16,21 @@
 
 <body>
     <video playsinline autoplay muted loop id="bgvid">
-        <source src="Boat sailing near the city.mp4" type="video/mp4" />
+        <source src="img-vid/Boat sailing near the city.mp4" type="video/mp4" />
     </video>
     <div class="container">
         <div class="weather-app">
             <br />
             <h1>Glad you are here!🌞</h1>
             <hr />
-            <div class="row">
-                <div class="col-4" id="location">
+            <div class="row" id="top locations">
+                <div class="col-4" id="location1">
                     <button>Paris <br />🗺🌍🗺</button>
                 </div>
-                <div class="col-4" id="location">
+                <div class="col-4" id="location2">
                     <button>New York <br />🗺🌍🗺</button>
                 </div>
-                <div class="col-4" id="location">
+                <div class="col-4" id="location3">
                     <button>Lagos <br />🗺🌍🗺</button>
                 </div>
             </div>
@@ -52,14 +53,16 @@
             </form>
             <hr />
             <h2>
-               <i class="fas fa-cloud-sun"></i>
+               
+                <i class="fas fa-cloud-sun" alt="" id="icon"></i>
                 <strong id="city">Vancouver</strong>
                 <br />
                 <span class="temperature" id="degree">5</span><span class="units">
-                    <a href="#" id="celsius-link">°C</a> |
-                    <a href="#" id="fahrenheit-link">°F</a>
+                    <a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link" class="fahrenheit">°F</a>
                 </span>
             </h2>
+                       
             <h3 id="date">Thursday, Mar 18, 2021, 07:09 AM</h3>
             <hr />
             <div class="col-6">
@@ -81,7 +84,7 @@
             </div>
         </div>
     </div>
-    <script src="WeatherAppGO-j.js"></script>
+    <script src=WeatherAppGO-j.js"></script>
 </body>
 
 </html>
