@@ -60,7 +60,7 @@ button {
 
 .weather-app {
   background: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
-  border: 30px solid black;
+  border: 30px solid #252525;
   border-radius: 90px;
   padding: 0px 10px;
   max-width: 410px;
