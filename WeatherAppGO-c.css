@@ -33,6 +33,14 @@ h2 img {
   max-width: 50px;
 }
 
+.celsius {
+  font-size: 18px;
+}
+
+.fahrenheit {
+  font-size: 18px;
+}
+
 ul {
   list-style: none;
   font-size: 12px;
