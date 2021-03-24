@@ -43,18 +43,17 @@ h2 img {
   color: black;
   cursor: default;
   position: relative;
-  top: -20px;
+  top: -18px;
 }
 
 .active:hover {
 text-decoration: none;
 }
 
-
 .fahrenheit {
   font-size: 18px;
   position: relative;
-  top: -30px;
+  top: -18px;
 }
 
 ul {
