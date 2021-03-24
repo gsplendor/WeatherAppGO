@@ -98,17 +98,17 @@ function getCurrentPosition(event) {
  
 function convertToFahrenheit(event) {
   event.preventDefault();
+  let temperatureElement = document.querySelector("#degree");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let toFahrenheit = (toCelsius*9)/5+32;
-  let temperatureElement = document.querySelector("#degree");
   temperatureElement.innerHTML = Math.round(toFahrenheit);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-   fahrenheitLink.classList.remove("active");
-   celsiusLink.classList.add("active");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#degree");
   temperatureElement.innerHTML = Math.round(toCelsius);  
 }
