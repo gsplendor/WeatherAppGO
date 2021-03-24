@@ -34,13 +34,11 @@ h2 img {
   text-decoration: none;
 }
 
-
 #fahrenheit-link {
   font-size: 15px;
   position: relative;
   top: -15px;
 }
-
 
 h3 {
   text-align: center;
@@ -62,6 +60,43 @@ ul {
 #description {
   font-size: 20px;
   font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.weather-forecast {
+  margin-top: 7px;
+}
+
+.weather-forecast h4 {
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  height: 13px;
+  line-height: 15px;
+  padding-top: 5px;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  width: 40px;
 }
 
 button {
