@@ -21,17 +21,11 @@ h2 {
   font-size: 30px;
 }
 
-#fahrenheit-link {
-  font-size: 15px;
-  position: relative;
-  top: -15px;
-}
-
 h2 img {
   max-width: 50px;
 }
 
-.active {
+#celsius-link {
   font-size: 15px;
   color: black;
   cursor: default;
@@ -39,9 +33,16 @@ h2 img {
   top: -15px;
 }
 
-.active:hover {
+#celsius-link:hover {
 text-decoration: none;
 }
+
+#fahrenheit-link {
+  font-size: 15px;
+  position: relative;
+  top: -15px;
+}
+
 
 h3 {
   text-align: center;
