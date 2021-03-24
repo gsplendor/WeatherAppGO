@@ -39,11 +39,11 @@ h2 img {
 }
 
 .active {
-  font-size: 18px;
+  font-size: 15px;
   color: black;
   cursor: default;
   position: relative;
-  top: -18px;
+  top: -15px;
 }
 
 .active:hover {
@@ -51,9 +51,9 @@ text-decoration: none;
 }
 
 .fahrenheit {
-  font-size: 18px;
+  font-size: 15px;
   position: relative;
-  top: -18px;
+  top: -15px;
 }
 
 ul {
