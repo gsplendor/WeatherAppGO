@@ -25,7 +25,7 @@ h2 img {
   max-width: 50px;
 }
 
-.temperature .active {
+#celsius-link {
   font-size: 15px;
   color: black;
   cursor: default;
@@ -33,7 +33,7 @@ h2 img {
   top: -15px;
 }
 
-.temperature .active:hover {
+#celsius-link:hover {
 text-decoration: none;
 }
 
