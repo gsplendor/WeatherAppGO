@@ -12,7 +12,7 @@ h1 {
 }
 
 #country {
-  font-size: small;
+  font-size: 15px;
 }
 
 h2 {
@@ -33,7 +33,7 @@ h2 img {
   top: -15px;
 }
 
-#celsius-link:hover {
+#celsius-link .active:hover {
 text-decoration: none;
 }
 
