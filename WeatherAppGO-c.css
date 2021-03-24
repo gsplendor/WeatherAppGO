@@ -32,6 +32,8 @@ h3 {
 .units {
   font-size: 15px;
   display: block;
+  position: relative;
+  top: -15px;
 }
 
 h2 img {
@@ -48,12 +50,6 @@ h2 img {
 
 .active:hover {
 text-decoration: none;
-}
-
-.fahrenheit {
-  font-size: 15px;
-  position: relative;
-  top: -15px;
 }
 
 ul {
