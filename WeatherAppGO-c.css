@@ -31,11 +31,9 @@ h2 img {
   cursor: default;
   position: relative;
   top: -15px;
+  text-decoration: none;
 }
 
-#celsius-link:hover {
-text-decoration: none;
-}
 
 #fahrenheit-link {
   font-size: 15px;
