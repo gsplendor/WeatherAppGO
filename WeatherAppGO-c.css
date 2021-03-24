@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  min-width: 560px;
+  min-width: 500px;
   margin: 100px auto;
 }
 
@@ -8,13 +8,17 @@ h1 {
   font-size: 30px;
   text-align: center;
   display: block;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 h2 {
   text-align: center;
   display: block;
-  font-size: 35px;
+  font-size: 30px;
+}
+
+#country {
+  font-size: small;
 }
 
 h3 {
@@ -22,6 +26,7 @@ h3 {
   display: block;
   font-size: 12px;
   font-weight: bold;
+  font-style: italic;
 }
 
 .units {
@@ -43,9 +48,11 @@ h2 img {
 
 ul {
   list-style: none;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   display: block;
+  font-style: italic;
+  text-align: center;
 }
 
 button {
@@ -68,11 +75,11 @@ button {
 
 .weather-app {
   background: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
-  border: 30px solid #252525;
+  border: 25px solid #252525;
   border-radius: 90px;
   padding: 0px 10px;
-  max-width: 410px;
-  margin: 40px auto;
+  max-width: 420px;
+  margin: 30px auto;
 }
 
 .view {
