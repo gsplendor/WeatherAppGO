@@ -38,12 +38,23 @@ h2 img {
   max-width: 50px;
 }
 
-.celsius {
+.active {
   font-size: 18px;
+  color: black;
+  cursor: default;
+  position: relative;
+  top: -30px;
 }
+
+.active:hover {
+text-decoration: none;
+}
+
 
 .fahrenheit {
   font-size: 18px;
+  position: relative;
+  top: -30px;
 }
 
 ul {
@@ -53,6 +64,11 @@ ul {
   display: block;
   font-style: italic;
   text-align: center;
+}
+
+#description {
+   font-size: 18px;
+  font-weight: bold;
 }
 
 button {
