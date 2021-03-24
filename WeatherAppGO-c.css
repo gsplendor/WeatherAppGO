@@ -43,7 +43,6 @@ h2 img {
 text-decoration: none;
 }
 
-
 h3 {
   text-align: center;
   display: block;
@@ -62,7 +61,7 @@ ul {
 }
 
 #description {
-   font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
