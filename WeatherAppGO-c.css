@@ -43,7 +43,7 @@ h2 img {
   color: black;
   cursor: default;
   position: relative;
-  top: -30px;
+  top: -20px;
 }
 
 .active:hover {
