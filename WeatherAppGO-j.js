@@ -28,6 +28,9 @@ function formatDate (timestamp) {
   let month = months[date.getMonth()]; 
   let year = date.getFullYear();
   let number = date.getDate();
+ 
+ return `Last updated on: ${day}, ${month} ${number}, ${year} at ${formatHours(timestamp)}`;
+}
 
   function formatHours(timestamp) {
   let date = new Date(timestamp);
@@ -40,7 +43,7 @@ function formatDate (timestamp) {
     minutes = `0${minutes}`;
     }
 
-  return `Last updated on: ${day}, ${month} ${number}, ${year} at ${formatHours(timestamp)}`;
+  return '${hours}:${minutes}';
 }
 
 
@@ -68,39 +71,29 @@ let dateElement = document.querySelector("#date");
 }
 
 
- let hours = date.getHours();
-    if (hours < 10) {
-    hours = `0${hours}`;
-}
-    let minutes = date.getMinutes();
-    if (minutes < 10) {
-    minutes = `0${minutes}`;
-    }
-
-  return `${hours}:${minutes}`;
-}
-
-
 function displayForecast(response) {
  let forecastElement = document.querySelector("#forecast");
  forecastElement.innerHTML = null;
  let forecast = null;
  
  for (let index = 0; index < 3; index++) { 
-  let forecast = response.data.list[index];
-  forecastElement.innerHTML +=`
+  forecast = response.data.list[index];
+  forecastElement.innerHTML += `
 <div class="col-4">
 <h4>
-$formatHours(forecast.dt * 1000)}
+ $formatHours(forecast.dt * 1000)}
 </h4>
 <img
  src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
+ <div class="weather-forecast-temperature">
  <strong>
   ${Math.round(forecast.main.temp_max)}°
  </strong>
   ${Math.round(forecast.main.temp_min)}°;
   </div>
- </div> ';
+ </div> 
+';
+}
 }
 
 function enterCity(city) {
@@ -112,7 +105,6 @@ function enterCity(city) {
  
  apiUrl = `https://api.openweathermap.org/data/2.5/forecast/?q={city}&appid={apikey}&units=metric`;
  axios.get(apiUrl).then(displayForecast);
- 
 }
 
 function submit(event) {
