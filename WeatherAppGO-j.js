@@ -1,5 +1,5 @@
-function formatDate(timestamp) {
- let date = new Date(timestamp);
+function formatDate (timestamp) {
+ let date = new Date (timestamp);
    let days = [
   "Sunday",
   "Monday",
@@ -28,12 +28,7 @@ function formatDate(timestamp) {
   let month = months[date.getMonth()]; 
   let year = date.getFullYear();
   let number = date.getDate();
- 
- return `Last updated on: ${day}, ${month} ${number}, ${year} at ${formatHours(timestamp)}`;
-}
 
-  function formatHours(timestamp) {
-  let date = new Date(timestamp);
   let hours = date.getHours();
     if (hours < 10) {
     hours = `0${hours}`;
@@ -43,7 +38,7 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
     }
 
-  return '${hours}:${minutes}';
+  return `Last updated on: ${day}, ${month} ${number}, ${year} at ${hours}:${minutes}`;
 }
 
 
@@ -51,68 +46,31 @@ function formatDate(timestamp) {
 let button = document.querySelector("#currently");
 
 function currentWeather(response) {
-  let degreeElement = document.querySelector("#degree");
-  let cityElement = document.querySelector("#city");
-  let countryElement = document.querySelector("#country");
-  let descriptionElement = document.querySelector("#description");
-  let feels_likeElement = document.querySelector("#feels-like");
-  let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind");
-  let dateElement = document.querySelector("#date");
-  let iconElement = document.querySelector("#icon");
+  document.querySelector("#city").innerHTML=response.data.name;
+  document.querySelector("#country").innerHTML = response.data.sys.country;
+  document.querySelector("#degree").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
+  document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  
+    
+let dateElement = document.querySelector("#date");
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
-  toCelsius = response.data.main.temp;
-
-  degreeElement.innerHTML = Math.round(celsiusDegree);
-  cityElement.innerHTML = response.data.name;
-  countryElement.innerHTML = response.data.sys.country;
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  feels_likeElement.innerHTML = Math.round(response.data.main.feels_like);
- humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+ let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
-}
-
-
-function displayForecast(response) {
- let forecastElement = document.querySelector("#forecast");
- forecastElement.innerHTML = null;
- let forecast = null;
- 
- for (let index = 0; index < 3; index++) { 
-  forecast = response.data.list[index];
-  forecastElement.innerHTML += `
-<div class="col-4">
-<h4>
- $formatHours(forecast.dt * 1000)}
-</h4>
-<img
- src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
- />
- <div class="weather-forecast-temperature">
- <strong>
-  ${Math.round(forecast.main.temp_max)}°
- </strong>
-  ${Math.round(forecast.main.temp_min)}°;
-  </div>
- </div> 
-';
-}
+  
+  toCelsius = response.data.main.temp;
 }
 
 function enterCity(city) {
  let apiKey = "f8250d81f6e1cec8e34d3029054ab81a";
  let units = "metric";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
- axios.get(apiUrl).then(currentWeather); 
  
- apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&units=metric`;
- axios.get(apiUrl).then(displayForecast);
+ axios.get(apiUrl).then(currentWeather); 
 }
 
 function submit(event) {
@@ -140,19 +98,19 @@ function getCurrentPosition(event) {
  
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let degreeElement = document.querySelector("#degree");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let toFahrenheit = (toCelsius*9)/5+32;
+  let degreeElement = document.querySelector("#degree");
   degreeElement.innerHTML = Math.round(toFahrenheit);
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let degreeElement = document.querySelector("#degree");
-  degreeElement.innerHTML = Math.round(toCelsius);  
+   fahrenheitLink.classList.remove("active");
+   celsiusLink.classList.add("active");
+  let temperatureElement = document.querySelector("#degree");
+  temperatureElement.innerHTML = Math.round(toCelsius);  
 }
 
 let toCelsius = null;
@@ -168,4 +126,3 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 //Default City
 enterCity("Vancouver");
-
