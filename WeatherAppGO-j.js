@@ -1,5 +1,5 @@
-function formatDate (timestamp) {
- let date = new Date (timestamp);
+function formatDate(timestamp) {
+ let date = new Date(timestamp);
    let days = [
   "Sunday",
   "Monday",
@@ -59,6 +59,7 @@ function currentWeather(response) {
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   
+  toCelsius = response.data.main.temp;
     
 let dateElement = document.querySelector("#date");
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -66,8 +67,6 @@ let dateElement = document.querySelector("#date");
  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  
-  toCelsius = response.data.main.temp;
 }
 
 
@@ -84,7 +83,8 @@ function displayForecast(response) {
  $formatHours(forecast.dt * 1000)}
 </h4>
 <img
- src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
+ src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+ />
  <div class="weather-forecast-temperature">
  <strong>
   ${Math.round(forecast.main.temp_max)}°
@@ -100,10 +100,9 @@ function enterCity(city) {
  let apiKey = "f8250d81f6e1cec8e34d3029054ab81a";
  let units = "metric";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
- 
  axios.get(apiUrl).then(currentWeather); 
  
- apiUrl = `https://api.openweathermap.org/data/2.5/forecast/?q={city}&appid={apikey}&units=metric`;
+ apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&units=metric`;
  axios.get(apiUrl).then(displayForecast);
 }
 
